@@ -5,12 +5,12 @@ const farms: FarmConfig[] = [
   {
     pid: 0,
     risk: 5,
-    lpSymbol: 'YIELDBOOSTER-WAVAX LP',
+    lpSymbol: 'YIELBOOSTER-WAVAX LP',
     lpAddresses: {
       43114: '0xc6Cd70AdD4525B7750C7185fDE77193E8CD082C4',
       97: '',
     },
-    tokenSymbol: 'YIELDBOOSTER',
+    tokenSymbol: 'YIELBOOSTER',
     tokenAddresses: {
       43114: '0xF66279e277b7Ad640081272080E77c496edb1C1f',
       97: '',
@@ -20,6 +20,22 @@ const farms: FarmConfig[] = [
   },
   {
     pid: 1,
+    risk: 5,
+    lpSymbol: 'YIELBOOSTER-USDC.e LP',
+    lpAddresses: {
+      43114: '0x30EfC95a11d6ed30184fb81C124C5d8E7Ef490f3',
+      97: '',
+    },
+    tokenSymbol: 'YIELBOOSTER',
+    tokenAddresses: {
+      43114: '0xF66279e277b7Ad640081272080E77c496edb1C1f',
+      97: '',
+    },
+    quoteTokenSymbol: QuoteToken.USDC,
+    quoteTokenAdresses: contracts.usdc,
+  },
+   {
+    pid: 2,
     risk: 1,
     isTokenOnly: true,
     lpSymbol: 'WAVAX',
