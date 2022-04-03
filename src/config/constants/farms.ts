@@ -7,7 +7,7 @@ const farms: FarmConfig[] = [
     risk: 5,
     lpSymbol: 'YIELDBOOSTER-WAVAX LP',
     lpAddresses: {
-      43114: '0xc6Cd70AdD4525B7750C7185fDE77193E8CD082C4',
+      43114: '',
       97: '',
     },
     tokenSymbol: 'YIELDBOOSTER',
@@ -23,7 +23,7 @@ const farms: FarmConfig[] = [
     risk: 5,
     lpSymbol: 'YIELDBOOSTER-USDC.e LP',
     lpAddresses: {
-      43114: '0x30EfC95a11d6ed30184fb81C124C5d8E7Ef490f3',
+      43114: '',
       97: '',
     },
     tokenSymbol: 'YIELDBOOSTER',
