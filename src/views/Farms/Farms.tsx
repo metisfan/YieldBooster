@@ -1,7 +1,6 @@
 import React, { useEffect, useCallback, useState } from 'react'
 import { Route, useRouteMatch } from 'react-router-dom'
 import styled from 'styled-components'
-import Countdown, { zeroPad } from 'react-countdown'
 import { useDispatch } from 'react-redux'
 import BigNumber from 'bignumber.js'
 import { useWallet } from '@binance-chain/bsc-use-wallet'
@@ -65,9 +64,6 @@ const CountdownTimeStart = ({ days, hours, minutes, seconds, completed }) => {
       <Heading as="h2" size="xl" color="#fff" mb="10px">
         APR Reset in
       </Heading>
-      <span style={{ fontSize: '30px', paddingTop: '10px', paddingBottom: '5px', color: '#ff9505', fontWeight: 800 }}>
-        {zeroPad(days)} : {zeroPad(hours)} : {zeroPad(minutes)} : {zeroPad(seconds)}
-      </span>
       <span style={{ fontSize: '15px', paddingTop: '10px', paddingBottom: '5px' }}>
         Days : Hours : Minutes : Seconds
       </span>
@@ -163,9 +159,6 @@ const Farms: React.FC<FarmsProps> = (farmsProps) => {
           </Heading>
         </LeftCol>
         <RightCol>
-          <Column>
-            <Countdown date={countdownDate} zeroPadTime={2} renderer={CountdownTimeStart} />
-          </Column>
         </RightCol>
       </HeaderContainer>
       <FarmTabButtons stakedOnly={stakedOnly} setStakedOnly={setStakedOnly} />
