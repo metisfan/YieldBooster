@@ -158,8 +158,6 @@ const Farms: React.FC<FarmsProps> = (farmsProps) => {
             Transfer Tax sold to provide liquidity to LP Pools
           </Heading>
         </LeftCol>
-        <RightCol>
-        </RightCol>
       </HeaderContainer>
       <FarmTabButtons stakedOnly={stakedOnly} setStakedOnly={setStakedOnly} />
       <div>
