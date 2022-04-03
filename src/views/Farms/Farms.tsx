@@ -1,5 +1,7 @@
 import React, { useEffect, useCallback, useState } from 'react'
 import { Route, useRouteMatch } from 'react-router-dom'
+import styled from 'styled-components'
+import Countdown, { zeroPad } from 'react-countdown'
 import { useDispatch } from 'react-redux'
 import BigNumber from 'bignumber.js'
 import { useWallet } from '@binance-chain/bsc-use-wallet'
@@ -17,8 +19,60 @@ import FarmCard, { FarmWithStakedValue } from './components/FarmCard/FarmCard'
 import FarmTabButtons from './components/FarmTabButtons'
 import Divider from './components/Divider'
 
-export interface FarmsProps{
+export interface FarmsProps {
   tokenMode?: boolean
+}
+const HeaderContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  ${({ theme }) => theme.mediaQueries.xl} {
+    flex-direction: row;
+  }
+`
+const LeftCol = styled.div`
+  width: 100%;
+`
+const RightCol = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`
+
+const Column = styled.div`
+  width: 50%;
+  text-align: center;
+  font-size: 14px;
+  padding: 20px;
+`
+const CountdownText = styled.span`
+  font-size: 12px;
+  color: #fff;
+  border-radius: 5px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+
+  ${({ theme }) => theme.mediaQueries.lg} {
+    margin-right: auto;
+    margin-bottom: 5px;
+  }
+`
+const CountdownTimeStart = ({ days, hours, minutes, seconds, completed }) => {
+  return (
+    <CountdownText>
+      <Heading as="h2" size="xl" color="#fff" mb="10px">
+        APR Reset in
+      </Heading>
+      <span style={{ fontSize: '30px', paddingTop: '10px', paddingBottom: '5px', color: '#ff9505', fontWeight: 800 }}>
+        {zeroPad(days)} : {zeroPad(hours)} : {zeroPad(minutes)} : {zeroPad(seconds)}
+      </span>
+      <span style={{ fontSize: '15px', paddingTop: '10px', paddingBottom: '5px' }}>
+        Days : Hours : Minutes : Seconds
+      </span>
+    </CountdownText>
+  )
 }
 
 const Farms: React.FC<FarmsProps> = (farmsProps) => {
@@ -28,7 +82,7 @@ const Farms: React.FC<FarmsProps> = (farmsProps) => {
   const cakePrice = usePriceCakeBusd()
   const bnbPrice = usePriceBnbBusd()
   const { account, ethereum }: { account: string; ethereum: provider } = useWallet()
-  const {tokenMode} = farmsProps;
+  const { tokenMode } = farmsProps
 
   const dispatch = useDispatch()
   const { fastRefresh } = useRefresh()
@@ -57,19 +111,21 @@ const Farms: React.FC<FarmsProps> = (farmsProps) => {
         // if (!farm.tokenAmount || !farm.lpTotalInQuoteToken || !farm.lpTotalInQuoteToken) {
         //   return farm
         // }
-        const cakeRewardPerBlock = new BigNumber(farm.eggPerBlock || 1).times(new BigNumber(farm.poolWeight)) .div(new BigNumber(10).pow(18))
+        const cakeRewardPerBlock = new BigNumber(farm.eggPerBlock || 1)
+          .times(new BigNumber(farm.poolWeight))
+          .div(new BigNumber(10).pow(18))
         const cakeRewardPerYear = cakeRewardPerBlock.times(BLOCKS_PER_YEAR)
 
-        let apy = cakePrice.times(cakeRewardPerYear);
+        let apy = cakePrice.times(cakeRewardPerYear)
 
-        let totalValue = new BigNumber(farm.lpTotalInQuoteToken || 0);
+        let totalValue = new BigNumber(farm.lpTotalInQuoteToken || 0)
 
-        if (farm.quoteTokenSymbol === QuoteToken.WFTM) {
-          totalValue = totalValue.times(bnbPrice);
+        if (farm.quoteTokenSymbol === QuoteToken.WAVAX) {
+          totalValue = totalValue.times(bnbPrice)
         }
 
-        if(totalValue.comparedTo(0) > 0){
-          apy = apy.div(totalValue);
+        if (totalValue.comparedTo(0) > 0) {
+          apy = apy.div(totalValue)
         }
 
         return { ...farm, apy }
@@ -88,21 +144,31 @@ const Farms: React.FC<FarmsProps> = (farmsProps) => {
     },
     [bnbPrice, account, cakePrice, ethereum],
   )
+  const [countdownDate, setCountdownDate] = useState(1648303200000)
 
   return (
     <Page>
-      <Heading as="h1" size="lg" color="primary" mb="50px" style={{ textAlign: 'center' }}>
-        {
-          tokenMode ?
-            TranslateString(10002, '')
-            :
-          TranslateString(320, '')
-        }
-      </Heading>
-      <Heading as="h2" color="secondary" mb="50px" style={{ textAlign: 'center' }}>
-        {TranslateString(10000, 'Deposit Fee will be used to buyback EGG')}
-      </Heading>
-      <FarmTabButtons stakedOnly={stakedOnly} setStakedOnly={setStakedOnly}/>
+      <HeaderContainer>
+        <LeftCol>
+          <Heading as="h1" size="xl" color="success" mb="20px">
+            Avax Yield Farm with Auto Liquidity
+          </Heading>
+          <Heading as="h2" size="lg" color="primary" mb="15px">
+            {tokenMode
+              ? TranslateString(10002, 'Stake tokens to earn EGG')
+              : TranslateString(320, 'Stake LP tokens to earn EGG')}
+          </Heading>
+          <Heading as="h2" size="lg" color="secondary" mb="15px">
+            Transfer Tax sold to provide liquidity to LP Pools
+          </Heading>
+        </LeftCol>
+        <RightCol>
+          <Column>
+            <Countdown date={countdownDate} zeroPadTime={2} renderer={CountdownTimeStart} />
+          </Column>
+        </RightCol>
+      </HeaderContainer>
+      <FarmTabButtons stakedOnly={stakedOnly} setStakedOnly={setStakedOnly} />
       <div>
         <Divider />
         <FlexLayout>
@@ -114,6 +180,7 @@ const Farms: React.FC<FarmsProps> = (farmsProps) => {
           </Route>
         </FlexLayout>
       </div>
+      {/* <Image src="/images/egg/8.png" alt="illustration" width={1352} height={587} responsive /> */}
     </Page>
   )
 }
