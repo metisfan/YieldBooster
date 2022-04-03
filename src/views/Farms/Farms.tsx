@@ -151,11 +151,11 @@ const Farms: React.FC<FarmsProps> = (farmsProps) => {
           </Heading>
           <Heading as="h2" size="lg" color="primary" mb="15px">
             {tokenMode
-              ? TranslateString(10002, 'Stake tokens to earn EGG')
-              : TranslateString(320, 'Stake LP tokens to earn EGG')}
+              ? TranslateString(10002, ' ')
+              : TranslateString(320, '')}
           </Heading>
           <Heading as="h2" size="lg" color="secondary" mb="15px">
-            Transfer Tax sold to provide liquidity to LP Pools
+            5 % tax Auto liquidity
           </Heading>
         </LeftCol>
       </HeaderContainer>
