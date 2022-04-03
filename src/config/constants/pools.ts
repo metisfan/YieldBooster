@@ -11,7 +11,7 @@ const pools: PoolConfig[] = [
       97: '',
     },
     poolCategory: PoolCategory.CORE,
-    projectLink: 'https://weaver.antcolonydefi.com/',
+    projectLink: 'https://www.yieldbooster.finance/',
     harvest: true,
     tokenPerBlock: '0.00001', // TODO: To be updated
     sortOrder: 1,
