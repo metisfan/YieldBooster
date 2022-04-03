@@ -14,7 +14,6 @@ const GlobalStyle = createGlobalStyle`
   body {
     background-color: ${({ theme }) => theme.colors.background};
     background-image: url('/images/egg/11.png');
-    background-repeat: no-repeat;
     img {
       height: auto;
       max-width: 100%;
