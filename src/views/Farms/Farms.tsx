@@ -147,7 +147,7 @@ const Farms: React.FC<FarmsProps> = (farmsProps) => {
       <HeaderContainer>
         <LeftCol>
           <Heading as="h1" size="xl" color="success" mb="20px">
-            Avax Yield Farm with Auto Liquidity
+            From Farmers for Farmers, we are boosting your Yield of your favourite Token.
           </Heading>
           <Heading as="h2" size="lg" color="primary" mb="15px">
             {tokenMode
