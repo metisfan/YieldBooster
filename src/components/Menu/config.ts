@@ -64,7 +64,7 @@ const config: MenuEntry[] = [
  //   ],
  // },
   {
-    label: 'Presale, Charts and Docs',
+    label: 'Docs',
     icon: 'MoreIcon',
     items: [
       {
@@ -73,10 +73,6 @@ const config: MenuEntry[] = [
       },
       {
         label: 'Docs',
-        href: ' ',
-      },
-      {
-        label: 'Presale',
         href: ' ',
       },
     ],
