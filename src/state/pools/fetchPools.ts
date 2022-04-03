@@ -10,17 +10,17 @@ import BigNumber from 'bignumber.js'
 const CHAIN_ID = process.env.REACT_APP_CHAIN_ID
 
 export const fetchPoolsBlockLimits = async () => {
-  const poolsWithEnd = poolsConfig.filter((p) => p.sousId !== 0)
+  const poolsWithEnd = poolsConfig
   const callsStartBlock = poolsWithEnd.map((poolConfig) => {
     return {
       address: poolConfig.contractAddress[CHAIN_ID],
-      name: 'startBlock',
+      name: 'startTimestamp',
     }
   })
   const callsEndBlock = poolsWithEnd.map((poolConfig) => {
     return {
       address: poolConfig.contractAddress[CHAIN_ID],
-      name: 'bonusEndBlock',
+      name: 'bonusEndTimestamp',
     }
   })
 
@@ -32,16 +32,15 @@ export const fetchPoolsBlockLimits = async () => {
     const endBlock = ends[index]
     return {
       sousId: cakePoolConfig.sousId,
-      startBlock: new BigNumber(startBlock).toJSON(),
-      endBlock: new BigNumber(endBlock).toJSON(),
+      startTime: new BigNumber(startBlock).toJSON(),
+      endTime: new BigNumber(endBlock).toJSON(),
     }
   })
 }
 
 export const fetchPoolsTotalStatking = async () => {
-  const nonBnbPools = poolsConfig.filter((p) => p.stakingTokenName !== QuoteToken.WFTM)
-  const bnbPool = poolsConfig.filter((p) => p.stakingTokenName === QuoteToken.WFTM)
-
+  const nonBnbPools = poolsConfig.filter((p) => p.stakingTokenName !== QuoteToken.BNB)
+  const bnbPool = poolsConfig.filter((p) => p.stakingTokenName === QuoteToken.BNB)
   const callsNonBnbPools = nonBnbPools.map((poolConfig) => {
     return {
       address: poolConfig.stakingTokenAddress,
