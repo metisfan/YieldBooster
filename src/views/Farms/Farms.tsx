@@ -151,7 +151,7 @@ const Farms: React.FC<FarmsProps> = (farmsProps) => {
           </Heading>
           <Heading as="h2" size="lg" color="primary" mb="15px">
             {tokenMode
-              ? TranslateString(10002, ' ')
+              ? TranslateString(10002, '')
               : TranslateString(320, '')}
           </Heading>
           <Heading as="h2" size="lg" color="secondary" mb="15px">
