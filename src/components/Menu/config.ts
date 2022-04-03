@@ -6,27 +6,27 @@ const config: MenuEntry[] = [
     icon: 'HomeIcon',
     href: '/',
   },
+ // {
+ //   label: 'Trade',
+ //   icon: 'TradeIcon',
+ //   items: [
+  //    {
+  //      label: 'Exchange',
+  //      href: 'https://spookyswap.finance/',
+  //    },
+  //    {
+  //      label: 'Liquidity',
+  //      href: 'https://spookyswap.finance/',
+ //     },
+ //   ],
+//  },
   {
-    label: 'Trade',
-    icon: 'TradeIcon',
-    items: [
-      {
-        label: 'Exchange',
-        href: 'https://spookyswap.finance/',
-      },
-      {
-        label: 'Liquidity',
-        href: 'https://spookyswap.finance/',
-      },
-    ],
-  },
-  {
-    label: 'Farms',
+    label: 'Boosted Farms',
     icon: 'FarmIcon',
     href: '/farms',
   },
   {
-    label: 'Pools',
+    label: 'Boosted Pools',
     icon: 'PoolIcon',
     href: '/nests',
   },

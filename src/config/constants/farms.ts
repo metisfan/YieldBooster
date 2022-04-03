@@ -5,167 +5,189 @@ const farms: FarmConfig[] = [
   {
     pid: 0,
     risk: 5,
-    lpSymbol: 'PORTAL-fUSDT',
+    lpSymbol: 'WEAVE-WAVAX LP',
     lpAddresses: {
-      250: '0x350AD9B0c829B6e929592533eC0f0094C3B9A39F',
+      43114: '0xc6Cd70AdD4525B7750C7185fDE77193E8CD082C4',
       97: '',
     },
-    tokenSymbol: 'PORTAL',
+    tokenSymbol: 'WEAVE',
     tokenAddresses: {
-      250: '0xde88421D1a62A232e73921b22A68394e8Eb672Da',
+      43114: '0xF66279e277b7Ad640081272080E77c496edb1C1f',
       97: '',
     },
-    quoteTokenSymbol: QuoteToken.USDT,
-    quoteTokenAdresses: contracts.usdt,
+    quoteTokenSymbol: QuoteToken.WAVAX,
+    quoteTokenAdresses: contracts.wavax,
   },
   {
     pid: 1,
     risk: 5,
-    lpSymbol: 'PORTAL-WFTM',
+    isTokenOnly: true,
+    lpSymbol: 'WEAVE',
     lpAddresses: {
-      250: '0xaDF575aC0958073b0404AE24b327526dF155E3CF',
-      97: '',
+      43114: '0xc6Cd70AdD4525B7750C7185fDE77193E8CD082C4', // TODO
+      97: '', // WEAVE-WAVAX LP
     },
-    tokenSymbol: 'PORTAL',
+    tokenSymbol: 'WEAVE',
     tokenAddresses: {
-      250: '0xde88421D1a62A232e73921b22A68394e8Eb672Da',
+      43114: '0xF66279e277b7Ad640081272080E77c496edb1C1f',
       97: '',
     },
-    quoteTokenSymbol: QuoteToken.WFTM,
-    quoteTokenAdresses: contracts.wftm,
+    quoteTokenSymbol: QuoteToken.WAVAX,
+    quoteTokenAdresses: contracts.wavax,
   },
   {
     pid: 2,
-    risk: 1,
-    lpSymbol: 'Low APR: WFTM-USDC',
+    risk: 5,
+    isTokenOnly: true,
+    lpSymbol: 'WEAVE',
     lpAddresses: {
-      250: '0x2b4c76d0dc16be1c31d4c1dc53bf9b45987fc75c',
+      43114: '0xc6Cd70AdD4525B7750C7185fDE77193E8CD082C4', // TODO
+      97: '', // WEAVE-WAVAX LP
+    },
+    tokenSymbol: 'WEAVE',
+    tokenAddresses: {
+      43114: '0xF66279e277b7Ad640081272080E77c496edb1C1f',
       97: '',
     },
-    tokenSymbol: 'WFTM',
+    quoteTokenSymbol: QuoteToken.WAVAX,
+    quoteTokenAdresses: contracts.wavax,
+  },
+  {
+    pid: 3,
+    risk: 1,
+    isTokenOnly: true,
+    lpSymbol: 'WAVAX',
+    lpAddresses: {
+      43114: '0xA389f9430876455C36478DeEa9769B7Ca4E3DDB1',
+      97: '', // WAVAX-USDC.e
+    },
+    tokenSymbol: 'WAVAX',
     tokenAddresses: {
-      250: '0x21be370D5312f44cB42ce377BC9b8a0cEF1A4C83',
+      43114: '0xB31f66AA3C1e785363F0875A1B74E27b85FD66c7',
       97: '',
     },
     quoteTokenSymbol: QuoteToken.USDC,
     quoteTokenAdresses: contracts.usdc,
   },
   {
-    pid: 3,
-    risk: 3,
-    lpSymbol: 'Low APR: WFTM-DAI',
-    lpAddresses: {
-      250: '0xe120ffBDA0d14f3Bb6d6053E90E63c572A66a428',
-      97: '',
-    },
-    tokenSymbol: 'DAI',
-    tokenAddresses: {
-      250: '0x8D11eC38a3EB5E956B052f67Da8Bdc9bef8Abf3E',
-      97: '',
-    },
-    quoteTokenSymbol: QuoteToken.WFTM,
-    quoteTokenAdresses: contracts.wftm,
-  },
-  {
     pid: 4,
-    risk: 4,
-    lpSymbol: 'Medium APR: WBTC-WFTM',
+    risk: 3,
+    isTokenOnly: true,
+    lpSymbol: 'USDC.e',
     lpAddresses: {
-      250: '0xFdb9Ab8B9513Ad9E419Cf19530feE49d412C3Ee3',
-      97: '',
+      43114: '0xA389f9430876455C36478DeEa9769B7Ca4E3DDB1',
+      97: '', // WAVAX-USDC.e
     },
-    tokenSymbol: 'WBTC',
+    tokenSymbol: 'USDC.e',
     tokenAddresses: {
-      250: '0x321162Cd933E2Be498Cd2267a90534A804051b11',
+      43114: '0xA7D7079b0FEaD91F3e65f86E8915Cb59c1a4C664',
       97: '',
     },
-    quoteTokenSymbol: QuoteToken.WFTM,
-    quoteTokenAdresses: contracts.wftm,
+    quoteTokenSymbol: QuoteToken.WAVAX,
+    quoteTokenAdresses: contracts.wavax,
   },
+
   {
     pid: 5,
-    risk: 5,
+    risk: 1,
     isTokenOnly: true,
-    lpSymbol: 'PORTAL',
+    lpSymbol: 'USDT.e',
     lpAddresses: {
-      250: '0x350AD9B0c829B6e929592533eC0f0094C3B9A39F',
-      97: '', // PORTAL-USDT LP
+      43114: '0xed8cbd9f0ce3c6986b22002f03c6475ceb7a6256',
+      97: '', // WAVAX-USDT
     },
-    tokenSymbol: 'PORTAL',
+    tokenSymbol: 'USDT.e',
     tokenAddresses: {
-      250: '0xde88421D1a62A232e73921b22A68394e8Eb672Da',
+      43114: '0xc7198437980c041c805A1EDcbA50c1Ce5db95118',
       97: '',
     },
-    quoteTokenSymbol: QuoteToken.USDT,
-    quoteTokenAdresses: contracts.usdt,
+    quoteTokenSymbol: QuoteToken.WAVAX,
+    quoteTokenAdresses: contracts.wavax,
   },
   {
     pid: 6,
-    risk: 3,
+    risk: 2,
     isTokenOnly: true,
-    lpSymbol: 'High APR: USDC',
+    lpSymbol: 'DAI',
     lpAddresses: {
-      250: '0x2b4c76d0dc16be1c31d4c1dc53bf9b45987fc75c',
-      97: '', // FTM-USDC
+      43114: '0x87dee1cc9ffd464b79e058ba20387c1984aed86a',
+      97: '', // WAVAX-DAI LP
     },
-    tokenSymbol: 'USDC',
+    tokenSymbol: 'DAI',
     tokenAddresses: {
-      250: '0x04068DA6C83AFCFA0e13ba15A6696662335D5B75',
+      43114: '0xd586E7F844cEa2F87f50152665BCbc2C279D8d70',
       97: '',
     },
-    quoteTokenSymbol: QuoteToken.WFTM,
-    quoteTokenAdresses: contracts.wftm,
+    quoteTokenSymbol: QuoteToken.WAVAX,
+    quoteTokenAdresses: contracts.wavax,
   },
   {
     pid: 7,
     risk: 2,
     isTokenOnly: true,
-    lpSymbol: 'High APR: WBTC',
+    lpSymbol: 'MIM',
     lpAddresses: {
-      250: '0xfdb9ab8b9513ad9e419cf19530fee49d412c3ee3',
-      97: '', // FTM-WBTC LP
+      43114: '0x781655d802670bba3c89aebaaea59d3182fd755d',
+      97: '', // WAVAX-MIM LP
     },
-    tokenSymbol: 'WBTC',
+    tokenSymbol: 'MIM',
     tokenAddresses: {
-      250: '0x321162Cd933E2Be498Cd2267a90534A804051b11',
+      43114: '0x130966628846bfd36ff31a822705796e8cb8c18d',
       97: '',
     },
-    quoteTokenSymbol: QuoteToken.WFTM,
-    quoteTokenAdresses: contracts.wftm,
+    quoteTokenSymbol: QuoteToken.WAVAX,
+    quoteTokenAdresses: contracts.wavax,
   },
   {
     pid: 8,
     risk: 2,
     isTokenOnly: true,
-    lpSymbol: 'Ultra High APR: BOO',
+    lpSymbol: 'JOE',
     lpAddresses: {
-      250: '0xEc7178F4C41f346b2721907F5cF7628E388A7a58',
-      97: '', // FTM-WBTC LP
+      43114: '0x454e67025631c065d3cfad6d71e6892f74487a15',
+      97: '', // WAVAX-JOE LP
     },
-    tokenSymbol: 'BOO',
+    tokenSymbol: 'JOE',
     tokenAddresses: {
-      250: '0x841FAD6EAe12c286d1Fd18d1d525DFfA75C7EFFE',
+      43114: '0x6e84a6216eA6dACC71eE8E6b0a5B7322EEbC0fDd',
       97: '',
     },
-    quoteTokenSymbol: QuoteToken.WFTM,
-    quoteTokenAdresses: contracts.wftm,
+    quoteTokenSymbol: QuoteToken.WAVAX,
+    quoteTokenAdresses: contracts.wavax,
   },
   {
     pid: 9,
-    risk: 1,
+    risk: 2,
     isTokenOnly: true,
-    lpSymbol: 'Ultra High APR: WFTM',
+    lpSymbol: 'WBTC.e',
     lpAddresses: {
-      250: '0x5965e53aa80a0bcf1cd6dbdd72e6a9b2aa047410',
-      97: '', // FTM-USDT
+      43114: '0xd5a37dc5c9a396a03dd1136fc76a1a02b1c88ffa',
+      97: '', // WAVAX-WBTC.e LP
     },
-    tokenSymbol: 'WFTM',
+    tokenSymbol: 'WBTC.e',
     tokenAddresses: {
-      250: '0x21be370D5312f44cB42ce377BC9b8a0cEF1A4C83',
+      43114: '0x50b7545627a5162F82A992c33b87aDc75187B218',
       97: '',
     },
-    quoteTokenSymbol: QuoteToken.USDT,
-    quoteTokenAdresses: contracts.usdt,
+    quoteTokenSymbol: QuoteToken.WAVAX,
+    quoteTokenAdresses: contracts.wavax,
+  },
+  {
+    pid: 10,
+    risk: 2,
+    isTokenOnly: true,
+    lpSymbol: 'WETH.e',
+    lpAddresses: {
+      43114: '0xfe15c2695f1f920da45c30aae47d11de51007af9',
+      97: '', // WAVAX-WETH.e LP
+    },
+    tokenSymbol: 'WETH.e',
+    tokenAddresses: {
+      43114: '0x49D5c2BdFfac6CE2BFdB6640F4F80f226bc10bAB',
+      97: '',
+    },
+    quoteTokenSymbol: QuoteToken.WAVAX,
+    quoteTokenAdresses: contracts.wavax,
   },
 ]
 
