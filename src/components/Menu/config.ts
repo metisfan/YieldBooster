@@ -6,20 +6,20 @@ const config: MenuEntry[] = [
     icon: 'HomeIcon',
     href: '/',
   },
- // {
- //   label: 'Trade',
- //   icon: 'TradeIcon',
- //   items: [
-  //    {
-  //      label: 'Exchange',
-  //      href: 'https://spookyswap.finance/',
-  //    },
-  //    {
-  //      label: 'Liquidity',
-  //      href: 'https://spookyswap.finance/',
- //     },
- //   ],
-//  },
+  {
+    label: 'xYieldbooster LOCK',
+   icon: 'TradeIcon',
+   items: [
+     {
+       label: 'Comming Soon',
+        href: '#',
+      },
+   //   {
+   //     label: 'Liquidity',
+   //     href: 'https://spookyswap.finance/',
+   //   },
+    ],
+  },
   {
     label: 'Boosted Farms',
     icon: 'FarmIcon',
