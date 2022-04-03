@@ -12,7 +12,7 @@ const farms: FarmConfig[] = [
     },
     tokenSymbol: 'YIELDBOOSTER',
     tokenAddresses: {
-      43114: '0xF66279e277b7Ad640081272080E77c496edb1C1f',
+      43114: '0x2D8Db8dC6310447181bfae04695447fA23a3FB0d',
       97: '',
     },
     quoteTokenSymbol: QuoteToken.WAVAX,
@@ -28,7 +28,7 @@ const farms: FarmConfig[] = [
     },
     tokenSymbol: 'YIELDBOOSTER',
     tokenAddresses: {
-      43114: '0xF66279e277b7Ad640081272080E77c496edb1C1f',
+      43114: '0x2D8Db8dC6310447181bfae04695447fA23a3FB0d',
       97: '',
     },
     quoteTokenSymbol: QuoteToken.USDC,
