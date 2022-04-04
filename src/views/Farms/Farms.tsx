@@ -146,16 +146,10 @@ const Farms: React.FC<FarmsProps> = (farmsProps) => {
     <Page>
       <HeaderContainer>
         <LeftCol>
-          <Heading as="h1" size="xl" color="success" mb="20px">
-            From Farmers for Farmers, we are boosting your Yield of your favourite Token.
-          </Heading>
           <Heading as="h2" size="lg" color="primary" mb="15px">
             {tokenMode
               ? TranslateString(10002, '')
               : TranslateString(320, '')}
-          </Heading>
-          <Heading as="h2" size="lg" color="secondary" mb="15px">
-            5 % tax Auto liquidity
           </Heading>
         </LeftCol>
       </HeaderContainer>
