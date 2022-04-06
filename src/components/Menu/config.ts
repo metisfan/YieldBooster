@@ -69,11 +69,11 @@ const config: MenuEntry[] = [
     items: [
       {
         label: 'DexScreener',
-        href: '#',
+        href: ' ',
       },
       {
         label: 'Docs',
-        href: ' ',
+        href: 'https://gitbook.yieldbooster.finance/',
       },
     ],
   },
